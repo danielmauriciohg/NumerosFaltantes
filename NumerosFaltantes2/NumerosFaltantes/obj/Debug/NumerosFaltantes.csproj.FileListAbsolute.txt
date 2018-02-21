@@ -10,3 +10,9 @@ C:\Users\dahernandez\Documents\Visual Studio 2015\Projects\NumerosFaltantes2\Num
 C:\Users\dahernandez\Documents\Visual Studio 2015\Projects\NumerosFaltantes2\NumerosFaltantes\bin\Debug\NumerosFaltantes.exe
 C:\Users\dahernandez\Documents\Visual Studio 2015\Projects\NumerosFaltantes2\NumerosFaltantes\bin\Debug\NumerosFaltantes.pdb
 C:\Users\dahernandez\Documents\Visual Studio 2015\Projects\NumerosFaltantes2\NumerosFaltantes\obj\Debug\NumerosFaltantes.csprojResolveAssemblyReference.cache
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\bin\Debug\NumerosFaltantes.exe.config
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\obj\Debug\NumerosFaltantes.exe
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\obj\Debug\NumerosFaltantes.pdb
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\bin\Debug\NumerosFaltantes.exe
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\bin\Debug\NumerosFaltantes.pdb
+C:\Users\dahernandez\Documents\GitHub\NumerosFaltantes\NumerosFaltantes2\NumerosFaltantes\obj\Debug\NumerosFaltantes.csprojResolveAssemblyReference.cache

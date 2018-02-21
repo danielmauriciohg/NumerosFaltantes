@@ -31,11 +31,23 @@ namespace NumerosFaltantes
         /// <returns></returns>
         public static bool ValidarLista(string[] listaValidar, int posiciones)
         {
+            var tmpValidacion = true;
+            int numero;
             //Validar la diferencia entre el mayor y el menor
-            if (listaValidar.Length == posiciones)
+            foreach(string valorIgresado in listaValidar)
+            {
+                if(!int.TryParse(valorIgresado,out numero))
+                {
+                    Console.WriteLine("No se pudo convertir a número el valor: "+ valorIgresado);
+                    tmpValidacion = false;
+                }
+            }
+            if (listaValidar.Length == posiciones && tmpValidacion)
                 return true;
-
-            return false;
+            else
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -64,7 +76,7 @@ namespace NumerosFaltantes
         {
             List<string> listaDatosentrada = listB.ToList();
             List<int> listaNumerosEnteros = listaDatosentrada.ConvertAll(s => Int32.Parse(s));
-            var limiteMaxValores = 2 * Math.Pow(10, 4);
+            var limiteMaxValores = Math.Pow(10, 4);
             int diferencia = 0;
            
             listaNumerosEnteros.Sort();
@@ -93,10 +105,9 @@ namespace NumerosFaltantes
         /// <param name="listaA">ListaA de entrada</param>
         /// <param name="listaB">Listab de entrada</param>
         /// <returns></returns>
-        public static string EncontrarFaltantes(string[] listaA, string[] listaB)
+        public static List<int> EncontrarFaltantes(string[] listaA, string[] listaB)
         {
-            string faltantes = "";
-
+            List<int> ListaValoresFaltantes = new List<int>();
             IEnumerable<string> ListaBNoRepetidos = listaB.Distinct();
             int cantidadA = 0;
             int cantidadB = 0;
@@ -111,11 +122,14 @@ namespace NumerosFaltantes
                              select datoA).Count();
                 if (cantidadA < cantidadB)
                 {
-                    faltantes = faltantes + valorDato + " ";
+                    ListaValoresFaltantes.Add(Int32.Parse(valorDato));
+                   // faltantes = faltantes + valorDato + " ";
                 }
-
+                
             }
-            return faltantes;
+
+            ListaValoresFaltantes.Sort();
+            return ListaValoresFaltantes;
         }
 
 
@@ -134,7 +148,7 @@ namespace NumerosFaltantes
             string listaBInput = "";
             string[] listaA;
             string[] listaB;
-            string faltantes;
+            List<int> faltantes = new List<int>();
             //validar la longitud de la lista A
             while (!validarValorLongitudA)
             {
@@ -177,12 +191,22 @@ namespace NumerosFaltantes
                 listaBInput = Console.ReadLine();
                 listaB = ConvertirLista(listaBInput);
                 validaListaB = ValidarLista(listaB, longB);
-                validaListaB2 = ValidarListaB(listaB, longB);
+                if (validaListaB)
+                {
+                    validaListaB2 = ValidarListaB(listaB, longB);
+                }
+            
             }
 
 
             faltantes = EncontrarFaltantes(listaA, listaB);
-            Console.WriteLine("Numero Faltantes:" + faltantes);
+            Console.WriteLine("Numero Faltantes son:");
+            foreach (var nroFaltante in faltantes)
+            {
+                Console.Write (nroFaltante + " ");
+            }
+                
+            //Console.WriteLine("Numero Faltantes:" + faltantes);
             Console.ReadLine();
             
         }
